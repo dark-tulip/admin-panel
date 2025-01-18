@@ -1,27 +1,32 @@
-<h2>Manage Connections</h2>
-<form [formGroup]="connectionForm" (ngSubmit)="submit()">
-  <mat-card>
-    <mat-card-content>
-      <mat-form-field appearance="fill">
-        <mat-label>Database Type</mat-label>
-        <input matInput formControlName="dbType" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>URL</mat-label>
-        <input matInput formControlName="url" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Username</mat-label>
-        <input matInput formControlName="username" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput formControlName="password" type="password" />
-      </mat-form-field>
-      <mat-checkbox formControlName="isActive">Is Active</mat-checkbox>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
-    </mat-card-actions>
-  </mat-card>
-</form>
+<h2 class="form-title">Manage Connections</h2>
+<mat-card class="form-card">
+  <mat-card-content>
+    <form [formGroup]="connectionForm" (ngSubmit)="submit()">
+      <div class="form-grid">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Database Type</mat-label>
+          <input matInput formControlName="dbType" placeholder="e.g., postgresql"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>URL</mat-label>
+          <input matInput formControlName="url" placeholder="e.g., jdbc:postgresql://localhost:5432/source_db"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" placeholder="e.g., user1"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" placeholder="e.g., password123"/>
+        </mat-form-field>
+      </div>
+
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
