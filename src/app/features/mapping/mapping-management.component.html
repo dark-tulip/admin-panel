@@ -1,0 +1,42 @@
+<h2>Field Mapping</h2>
+<form [formGroup]="mappingForm" (ngSubmit)="submit()">
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Source DB Connection ID</mat-label>
+        <input matInput formControlName="sourceDbConnectionId"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Sink DB Connection ID</mat-label>
+        <input matInput formControlName="sinkDbConnectionId"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Source Schema Name</mat-label>
+        <input matInput formControlName="sourceSchemaName"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Sink Schema Name</mat-label>
+        <input matInput formControlName="sinkSchemaName"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Source Table Name</mat-label>
+        <input matInput formControlName="sourceTableName"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Sink Table Name</mat-label>
+        <input matInput formControlName="sinkTableName"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Source Columns (comma-separated)</mat-label>
+        <input matInput formControlName="sourceColumnsList"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Sink Columns (comma-separated)</mat-label>
+        <input matInput formControlName="sinkColumnsList"/>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Validate Mapping</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

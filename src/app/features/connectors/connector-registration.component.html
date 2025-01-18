@@ -1,0 +1,15 @@
+<h2>Register Connectors</h2>
+<form>
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Table Mapping ID</mat-label>
+        <input matInput [(ngModel)]="tableMappingId" name="tableMappingId"/>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="registerSource()">Register Source</button>
+      <button mat-raised-button color="accent" (click)="registerSink()">Register Sink</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
