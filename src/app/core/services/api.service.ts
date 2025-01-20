@@ -20,7 +20,7 @@ export class ApiService {
   }
 
   validateSchemaMapping(payload: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/datasource/connection/validate/schema-mapping`, payload);
+    return this.http.post(`${this.baseUrl}/datasource/connection/register/table-mapping`, payload);
   }
 
   registerSourceConnector(tableMappingId: number): Observable<any> {
