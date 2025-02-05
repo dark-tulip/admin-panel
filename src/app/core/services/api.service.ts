@@ -30,4 +30,8 @@ export class ApiService {
   registerSinkConnector(tableMappingId: number): Observable<any> {
     return this.http.post(`${this.baseUrl}/connectors/register/sink?tableMappingId=${tableMappingId}`, {});
   }
+
+  getTableMappingInfo(tableMappingId: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/table-mapping/info?tableMappingId=${tableMappingId}`);
+  }
 }

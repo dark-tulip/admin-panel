@@ -6,10 +6,23 @@
         <mat-label>Table Mapping ID</mat-label>
         <input matInput [(ngModel)]="tableMappingId" name="tableMappingId"/>
       </mat-form-field>
+
+      <div *ngIf="tableMappingInfo">
+        <h3>Source</h3>
+        <p><strong>Schema:</strong> {{ tableMappingInfo.source.schemaName }}</p>
+        <p><strong>Table:</strong> {{ tableMappingInfo.source.tableName }}</p>
+        <p><strong>Columns:</strong> {{ tableMappingInfo.source.columnsList.join(', ') }}</p>
+
+        <h3>Sink</h3>
+        <p><strong>Schema:</strong> {{ tableMappingInfo.sink.schemaName }}</p>
+        <p><strong>Table:</strong> {{ tableMappingInfo.sink.tableName }}</p>
+        <p><strong>Columns:</strong> {{ tableMappingInfo.sink.columnsList.join(', ') }}</p>
+      </div>
+
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="registerSource()">Register Source</button>
-      <button mat-raised-button color="accent" (click)="registerSink()">Register Sink</button>
+      <button mat-raised-button color="primary" (click)="runSync()">Синхронизировать</button>
+<!--      <button mat-raised-button color="accent" (click)="registerSink()">Register Sink</button>-->
     </mat-card-actions>
   </mat-card>
 </form>
